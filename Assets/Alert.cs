@@ -11,4 +11,10 @@ public class Alert
         this.alertName = alertName;
         this.consequence = consequence;
     }
+
+    public Alert(string alertName, Action<float> consequence, float parameter)
+    {
+        this.alertName = alertName;
+        this.consequence = () => consequence.Invoke(parameter);
+    }
 }
