@@ -7,6 +7,7 @@ public class pzzaSpawner : MonoBehaviour
     private float timer = 0;
     public float leftest = -4;
     public float rightest = 4;
+    public float spawnHeight = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,13 +18,22 @@ public class pzzaSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < SpawnRate) {
+        if (timer < SpawnRate)
+        {
             timer += Time.deltaTime;
         }
-        else {
-            float leftestPoint = transform.position.x - leftest;
-            float rightestPoint = transform.position.x - rightest;
-            Instantiate(road, new Vector3(Random.Range(leftestPoint, rightestPoint), transform.position.y, transform.position.z), rotation);
+        else
+        {
+            // Calculate the random X position within bounds
+            float randomX = Random.Range(leftest, rightest);
+
+            // Set the spawn position above the visible area
+            Vector3 spawnPosition = new Vector3(randomX, spawnHeight, 0);
+
+            // Instantiate the pzza
+            Instantiate(pzza, spawnPosition, Quaternion.identity);
+
+            // Reset the timer
             timer = 0;
         }
     }
