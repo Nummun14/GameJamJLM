@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,16 +12,20 @@ public class AlertScript : MonoBehaviour
     public float alertInterval = 10;
     private Coroutine alertCoroutine;
     private Alert nextAlertInSequence;
+    private playerMovment player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Alert secondAlert = new Alert("Nevermind he's white", doNothing);
-        alerts.Add(new Alert("You are under arrest for stealing that drill. No! Don't run!", () => changeSpeed(8), secondAlert));
-        alerts.Add(new Alert("The neighors are complaining, don't dig in this area", limitArea));
-        alerts.Add(new Alert("Do you have a permit for this?", () => changeSpeed(4)));
-        alerts.Add(new Alert("You look ugly ", () => changeSpeed(2)));
+        player = GameObject.FindGameObjectWithTag("player").GetComponent<playerMovment>();
+        Alert newALert = new Alert("bye bye", () => player.changeSpeed(-5));
+        alerts.Add(new Alert("משטרה בעיקבותיך אתה חייב למהר!!!", () => player.changeSpeed(5), newALert));
 
+      
+        alerts.Add(new Alert("משטרה בעיקבותיך אתה חייב למהר!!!", () => player.changeSpeed(5), newALert));
+        alerts.Add(new Alert("משטרה בעיקבותיך אתה חייב למהר!!!", () => player.changeSpeed(5), newALert));
+        alerts.Add(new Alert("משטרה בעיקבותיך אתה חייב למהר!!!", () => player.changeSpeed(5), newALert));
+      
         alertCoroutine = StartCoroutine(DisplayRandomAlerts());
     }
 

@@ -99,4 +99,8 @@ public class playerMovment : MonoBehaviour
             spawnDirt();
         }
     }
+    public void changeSpeed(int amout)
+    {
+        speed += amout;
+    }
 }
