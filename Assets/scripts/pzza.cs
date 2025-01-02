@@ -4,22 +4,20 @@ public class pzza : MonoBehaviour
 {
     public float speed = 5;
     public float deadZone = -5;
+    public logicScript logic;
+    public playerMovment player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovment>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       // Move downward
     transform.position = transform.position + (Vector3.down * speed) * Time.deltaTime;
 
-    // Debug log for position
-
-    // Destroy when below deadZone
     if (transform.position.y < deadZone)
     {
         Destroy(gameObject);
@@ -28,5 +26,7 @@ public class pzza : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log("lose");
-    }
+        logic.GameOver();
+        player.tryandtry();
+        }
 }
