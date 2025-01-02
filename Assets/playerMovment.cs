@@ -3,7 +3,7 @@ using UnityEngine;
 public class playerMovment : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-    public float speed = 10 ;
+    public float speed = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
