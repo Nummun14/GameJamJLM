@@ -824,7 +824,7 @@ SpriteRenderer:
   m_SortingLayerID: -808489377
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 68832a2e31a1eef4c82f7e0d18217169, type: 3}
+  m_Sprite: {fileID: 1634257073513659926, guid: 70f7ce564bf332947bff42c6298edcbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -866,7 +866,13 @@ MonoBehaviour:
   dirt: {fileID: 8064720540177359702, guid: 4a821943fee3d6c42ae37acfae0972f8, type: 3}
   speed: 10
   canSpawn: 1
-  logic: {fileID: 0}
+  logic: {fileID: 1758606565}
+  sprites:
+  - {fileID: 1634257073513659926, guid: 70f7ce564bf332947bff42c6298edcbb, type: 3}
+  - {fileID: -6365713449525780802, guid: f5210d5ab1c32614880661ad637a3bab, type: 3}
+  - {fileID: 5571474205568410654, guid: 2c77d85a9eaa5f64f973a0242b8f4c59, type: 3}
+  - {fileID: -2388994482622123551, guid: b5317789e12c4614dbefe6bff36b51c7, type: 3}
+  currentSpriteIndex: 0
 --- !u!61 &546123599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -905,7 +911,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.22, y: 1.62}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -923,7 +929,6 @@ GameObject:
   m_Component:
   - component: {fileID: 736523952}
   - component: {fileID: 736523951}
-  - component: {fileID: 736523950}
   m_Layer: 0
   m_Name: TextManger
   m_TagString: Untagged
@@ -931,19 +936,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &736523950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736523949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9479f0afdeb5d0344b57818d385fa1fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1844401011}
 --- !u!114 &736523951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,6 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e47547318a8fc568bc238efb9088603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1844401011}
   GameOverScreen: {fileID: 1355491032}
 --- !u!1 &1775552853
 GameObject:

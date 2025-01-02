@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70f7ce564bf332947bff42c6298edcbb
+guid: b1f3f85b863786746881d0901c4907f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1634257073513659926
-    second: digger1 _0
+      213: -8310578835852675831
+    second: p1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: digger1 _0
+      name: p1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 79
-        width: 122
-        height: 162
+        x: 0
+        y: 0
+        width: 317
+        height: 598
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61e7372562c0ea610800000000000000
-      internalID: 1634257073513659926
+      spriteID: 9053f138494eaac80800000000000000
+      internalID: -8310578835852675831
       vertices: []
       indices: 
       edges: []

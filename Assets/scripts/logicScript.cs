@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class logicScript : MonoBehaviour
 {
+
+    public Text scoreText;
+    private int score = 0;
+
     public GameObject GameOverScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,5 +26,11 @@ public class logicScript : MonoBehaviour
 
     public void GameOver(){
         GameOverScreen.SetActive(true);
+    }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
+        scoreText.text = score.ToString();
     }
 }
