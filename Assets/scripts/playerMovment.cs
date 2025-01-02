@@ -13,6 +13,7 @@ public class playerMovment : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         InvokeRepeating(nameof(animate), 0.15f, 0.15f);
     }
 
@@ -53,7 +54,7 @@ public class playerMovment : MonoBehaviour
     private void animate()
     {
         currentSpriteIndex++;
-        if (currentSpriteIndex >= 7)
+        if (currentSpriteIndex >= sprites.Length)
             currentSpriteIndex = 0;
 
         spriteRenderer.sprite = sprites[currentSpriteIndex];

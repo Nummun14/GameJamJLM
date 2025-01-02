@@ -637,8 +637,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 37.46, y: 46.82}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.22, y: 1.62}
+    newSize: {x: 1.22, y: 1.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -721,7 +721,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.22, y: 1.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -736,8 +736,8 @@ Transform:
   m_GameObject: {fileID: 546123592}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3388, y: -4.0571, z: -0.13183299}
-  m_LocalScale: {x: 0.02322102, y: 0.023126613, z: 1}
+  m_LocalPosition: {x: -1.2156, y: -3.8966, z: -0.13183299}
+  m_LocalScale: {x: 0.7550561, y: 0.75931823, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -763,10 +763,6 @@ MonoBehaviour:
   - {fileID: -6365713449525780802, guid: f5210d5ab1c32614880661ad637a3bab, type: 3}
   - {fileID: 5571474205568410654, guid: 2c77d85a9eaa5f64f973a0242b8f4c59, type: 3}
   - {fileID: -2388994482622123551, guid: b5317789e12c4614dbefe6bff36b51c7, type: 3}
-  - {fileID: -6260613274438922273, guid: 64c230585a51f5443b48d7d97bb876de, type: 3}
-  - {fileID: 1805211577854560323, guid: 9122cd578a4b8e84ea8f214dddc09bfe, type: 3}
-  - {fileID: 6186959978633335074, guid: 6ff99b2a0e8a3ba4783f9cb24ea30466, type: 3}
-  - {fileID: -6116398219554284827, guid: a531954bd3ecc0b49885f51a1fb5b9e6, type: 3}
   currentSpriteIndex: 0
 --- !u!1 &736523949
 GameObject:
@@ -798,6 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9479f0afdeb5d0344b57818d385fa1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1844401011}
 --- !u!114 &736523951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,6 +807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44655338dd611614bbb6bffe32a1a3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alertText: {fileID: 2117476777}
+  alertInterval: 10
 --- !u!4 &736523952
 Transform:
   m_ObjectHideFlags: 0

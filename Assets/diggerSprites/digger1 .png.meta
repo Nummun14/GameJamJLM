@@ -116,10 +116,10 @@ TextureImporter:
       name: digger1 _0
       rect:
         serializedVersion: 2
-        x: 4054
-        y: 3432
-        width: 3746
-        height: 4682
+        x: 99
+        y: 79
+        width: 122
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
