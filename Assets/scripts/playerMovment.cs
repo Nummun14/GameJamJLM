@@ -23,12 +23,21 @@ public class playerMovment : MonoBehaviour
 
             spawnDirt();
         }
+        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.x > -9.5)
+        {
+            playerBody.linearVelocity = Vector2.down * speed;
+            spawnDirt();
+        }
+        else if (Input.GetKey(KeyCode.UpArrow) && transform.position.x < 9.5)
+        {
+            playerBody.linearVelocity = Vector2.up * speed;
+            spawnDirt();
+        }
         else
         {
             playerBody.linearVelocity = Vector2.zero;
             spawnDirt();
         }
-
     }
 
     private void spawnDirt()

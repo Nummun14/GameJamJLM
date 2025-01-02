@@ -28,7 +28,7 @@ public class pzzaSpawner : MonoBehaviour
             float randomX = Random.Range(leftest, rightest);
 
             // Set the spawn position above the visible area
-            Vector3 spawnPosition = new Vector3(randomX, spawnHeight, 0);
+            Vector2 spawnPosition = new Vector2(randomX, spawnHeight);
 
             // Instantiate the pzza
             Instantiate(pzza, spawnPosition, Quaternion.identity);
