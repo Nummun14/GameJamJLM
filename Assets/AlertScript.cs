@@ -15,8 +15,8 @@ public class AlertScript : MonoBehaviour
     void Start()
     {
         alerts.Add(new Alert("The neighors are complaining, don't dig in this area", limitArea));
-        alerts.Add(new Alert("Do you have a permit for this?", changeSpeed, 4));
-        alerts.Add(new Alert("You look ugly ", changeSpeed, 2));
+        alerts.Add(new Alert("Do you have a permit for this?", () => changeSpeed(4)));
+        alerts.Add(new Alert("You look ugly ", () => changeSpeed(2)));
 
         alertCoroutine = StartCoroutine(DisplayRandomAlerts());
     }
