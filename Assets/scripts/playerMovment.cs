@@ -6,9 +6,11 @@ public class playerMovment : MonoBehaviour
     public Transform dirt;
     public float speed = 10;
     public bool canSpawn = true;
+    public logicScript logic;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
     }
 
     // Update is called once per frame
@@ -43,10 +45,7 @@ public class playerMovment : MonoBehaviour
     private void spawnDirt()
     {
         if (canSpawn)
-        {
-            Debug.Log("sapwnning");
             Instantiate(dirt, playerBody.position, dirt.rotation);
-        }
     }
 
 
@@ -54,6 +53,11 @@ public class playerMovment : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
             canSpawn = false;
+        if (collision.gameObject.layer == 6) {
+            Debug.Log(collision.gameObject.name);
+            Debug.Log("lose");
+            logic.GameOver();
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
