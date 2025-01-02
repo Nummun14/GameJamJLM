@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8a4701ed0401507b4bbebc297f182fa6
+guid: 73b518f183d105f4fad8624f588156a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1521952535231114083
-    second: pzza_0
+      213: -6776885432360561100
+    second: blocker_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pzza_0
+      name: blocker_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 900
-        height: 800
+        x: 39
+        y: 79
+        width: 202
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d945b8c9b30f0eae0800000000000000
-      internalID: -1521952535231114083
+      spriteID: 43611a0da9aa3f1a0800000000000000
+      internalID: -6776885432360561100
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pzza_0: -1521952535231114083
+      blocker_0: -6776885432360561100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
