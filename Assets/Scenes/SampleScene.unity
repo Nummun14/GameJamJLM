@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alertText: {fileID: 1623968281}
+  alertInterval: 10
 --- !u!1 &1500217572
 GameObject:
   m_ObjectHideFlags: 0
