@@ -5,8 +5,8 @@ public class pzzaSpawner : MonoBehaviour
     public GameObject pzza;
     public float SpawnRate= 2;
     private float timer = 0;
-    public float leftest = -4;
-    public float rightest = 4;
+    public float leftest = -5.5f;
+    public float rightest = 6.7f;
     public float spawnHeight = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

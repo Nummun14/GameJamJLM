@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4924057591697755818}
   - component: {fileID: 5390981392924360236}
   - component: {fileID: 5324039317234552453}
-  - component: {fileID: 8525010360230803353}
+  - component: {fileID: 4511950133385365510}
   m_Layer: 0
   m_Name: pzza
   m_TagString: Untagged
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -808489377
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1521952535231114083, guid: 8a4701ed0401507b4bbebc297f182fa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9, y: 8}
   m_EdgeRadius: 0
---- !u!114 &8525010360230803353
+--- !u!114 &4511950133385365510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  deadZone: -5
+  deadZone: -10
