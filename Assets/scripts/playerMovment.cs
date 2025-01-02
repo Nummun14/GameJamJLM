@@ -6,9 +6,14 @@ public class playerMovment : MonoBehaviour
     public Transform dirt;
     public float speed = 10;
     public bool canSpawn = true;
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] sprites;
+    public int currentSpriteIndex = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        InvokeRepeating(nameof(animate), 0.15f, 0.15f);
     }
 
     // Update is called once per frame
@@ -31,16 +36,6 @@ public class playerMovment : MonoBehaviour
 
     }
 
-    private void spawnDirt()
-    {
-        if (canSpawn)
-        {
-            Debug.Log("sapwnning");
-            Instantiate(dirt, playerBody.position, dirt.rotation);
-        }
-    }
-
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 3)
@@ -52,6 +47,24 @@ public class playerMovment : MonoBehaviour
         if (other.gameObject.layer == 3)
         {
             canSpawn = true;
+        }
+    }
+
+    private void animate()
+    {
+        currentSpriteIndex++;
+        if (currentSpriteIndex >= 7)
+            currentSpriteIndex = 0;
+
+        spriteRenderer.sprite = sprites[currentSpriteIndex];
+    }
+
+    private void spawnDirt()
+    {
+        if (canSpawn)
+        {
+            Debug.Log("sapwnning");
+            Instantiate(dirt, playerBody.position, dirt.rotation);
         }
     }
 }

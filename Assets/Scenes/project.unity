@@ -637,7 +637,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 37.46, y: 46.82}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -716,7 +716,7 @@ SpriteRenderer:
   m_SortingLayerID: -808489377
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 68832a2e31a1eef4c82f7e0d18217169, type: 3}
+  m_Sprite: {fileID: 1634257073513659926, guid: 70f7ce564bf332947bff42c6298edcbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -736,8 +736,8 @@ Transform:
   m_GameObject: {fileID: 546123592}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.62, z: -0.13183299}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.3388, y: -4.0571, z: -0.13183299}
+  m_LocalScale: {x: 0.02322102, y: 0.023126613, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -758,6 +758,16 @@ MonoBehaviour:
   dirt: {fileID: 8064720540177359702, guid: 4a821943fee3d6c42ae37acfae0972f8, type: 3}
   speed: 10
   canSpawn: 1
+  sprites:
+  - {fileID: 1634257073513659926, guid: 70f7ce564bf332947bff42c6298edcbb, type: 3}
+  - {fileID: -6365713449525780802, guid: f5210d5ab1c32614880661ad637a3bab, type: 3}
+  - {fileID: 5571474205568410654, guid: 2c77d85a9eaa5f64f973a0242b8f4c59, type: 3}
+  - {fileID: -2388994482622123551, guid: b5317789e12c4614dbefe6bff36b51c7, type: 3}
+  - {fileID: -6260613274438922273, guid: 64c230585a51f5443b48d7d97bb876de, type: 3}
+  - {fileID: 1805211577854560323, guid: 9122cd578a4b8e84ea8f214dddc09bfe, type: 3}
+  - {fileID: 6186959978633335074, guid: 6ff99b2a0e8a3ba4783f9cb24ea30466, type: 3}
+  - {fileID: -6116398219554284827, guid: a531954bd3ecc0b49885f51a1fb5b9e6, type: 3}
+  currentSpriteIndex: 0
 --- !u!1 &736523949
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9479f0afdeb5d0344b57818d385fa1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1844401011}
 --- !u!114 &736523951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,8 +810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44655338dd611614bbb6bffe32a1a3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertText: {fileID: 2117476777}
-  alertInterval: 10
 --- !u!4 &736523952
 Transform:
   m_ObjectHideFlags: 0
