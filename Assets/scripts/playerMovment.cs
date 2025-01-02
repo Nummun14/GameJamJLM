@@ -14,11 +14,11 @@ public class playerMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 6.7) {
             playerBody.linearVelocity = Vector2.right * speed;
             spawnDirt();
         }
-        else if (Input.GetKey(KeyCode.LeftArrow)) {
+        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -5.5) {
             playerBody.linearVelocity = Vector2.left * speed;
 
             spawnDirt();
