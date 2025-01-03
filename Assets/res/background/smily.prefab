@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1414512914352011698}
   - component: {fileID: 7364768090771313916}
-  - component: {fileID: 8039932979682218781}
+  - component: {fileID: -3462747373913036071}
   m_Layer: 6
   m_Name: smily
   m_TagString: Untagged
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8039932979682218781
-BoxCollider2D:
+--- !u!58 &-3462747373913036071
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,15 +122,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.82, y: 5.12}
-    newSize: {x: 4.82, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 4.82, y: 5.12}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.17753744, y: 0}
+  m_Radius: 2.3824625

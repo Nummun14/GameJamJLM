@@ -72,23 +72,23 @@ public class playerMovment : MonoBehaviour
     }
     private void movment()
     {
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 6.7)
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) && transform.position.x < 6.7)
         {
             playerBody.linearVelocity = Vector2.right * speed;
             spawnDirt();
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -5.5)
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) && transform.position.x > -5.5)
         {
             playerBody.linearVelocity = Vector2.left * speed;
 
             spawnDirt();
         }
-        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > -9.5)
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) && transform.position.y > -9.5)
         {
             playerBody.linearVelocity = Vector2.down * speed;
             spawnDirt();
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 9.5)
+        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) && transform.position.y < 9.5)
         {
             playerBody.linearVelocity = Vector2.up * speed;
             spawnDirt();
