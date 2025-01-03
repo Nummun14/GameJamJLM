@@ -70,37 +70,53 @@ public class playerMovment : MonoBehaviour
 
         spriteRenderer.sprite = sprites[currentSpriteIndex];
     }
-    private void movment()
+private void movment()
     {
         bool isKeyPressed = false;
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) )&& transform.position.x < 6.7)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.x < 6.7)
         {
-            playerBody.linearVelocity = new Vector2(1 * speed, playerBody.linearVelocity.y);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.y > 9.5 || transform.position.y < -9.5)
+                playerBody.linearVelocity = Vector2.right * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(1 * speed, playerBody.linearVelocity.y);
+                isKeyPressed = true;
+            }
         }
         if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.x > -7.5)
         {
-            playerBody.linearVelocity = new Vector2(-1 * speed, playerBody.linearVelocity.y);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.y > 9.5 || transform.position.y < -9.5)
+                playerBody.linearVelocity = Vector2.left * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(-1 * speed, playerBody.linearVelocity.y);
+                isKeyPressed = true;
+            }
         }
         if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y > -9.5)
         {
-            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, -1 * speed);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.x > 6.7 || transform.position.x < -7.5)
+                playerBody.linearVelocity = Vector2.down * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, -1 * speed);
+                isKeyPressed = true;
+            }
         }
         if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 9.5)
         {
-            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, 1 * speed);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.x > 6.7 || transform.position.x < -7.5)
+                playerBody.linearVelocity = Vector2.up * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, 1 * speed);
+                isKeyPressed = true;
+            }
         }
         if (!isKeyPressed)
         {
             playerBody.linearVelocity = Vector2.zero;
-            spawnDirt();
         }
+        spawnDirt();
     }
 }
