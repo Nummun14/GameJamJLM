@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dirt
   - Logic
+  - audio
   layers:
   - Default
   - TransparentFX
