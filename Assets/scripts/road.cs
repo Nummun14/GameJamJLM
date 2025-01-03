@@ -3,7 +3,7 @@ using UnityEngine;
 public class road : MonoBehaviour
 {
     public float speed = 5;
-    public float deadZone = -5;
+    public float deadZone = -10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

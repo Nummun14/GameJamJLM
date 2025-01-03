@@ -4,7 +4,7 @@ public class playerMovment : MonoBehaviour
 {
     public Rigidbody2D playerBody;
     public Transform dirt;
-    public float speed = 10;
+    public float speed = 6;
     public bool canSpawn = true;
     public logicScript logic;
     private SpriteRenderer spriteRenderer;
@@ -72,28 +72,32 @@ public class playerMovment : MonoBehaviour
     }
     private void movment()
     {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) && transform.position.x < 6.7)
+        bool isKeyPressed = false;
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) )&& transform.position.x < 6.7)
         {
-            playerBody.linearVelocity = Vector2.right * speed;
+            playerBody.linearVelocity = new Vector2(1 * speed, playerBody.linearVelocity.y);
             spawnDirt();
+            isKeyPressed = true;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) && transform.position.x > -5.5)
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.x > -7.5)
         {
-            playerBody.linearVelocity = Vector2.left * speed;
-
+            playerBody.linearVelocity = new Vector2(-1 * speed, playerBody.linearVelocity.y);
             spawnDirt();
+            isKeyPressed = true;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) && transform.position.y > -9.5)
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y > -9.5)
         {
-            playerBody.linearVelocity = Vector2.down * speed;
+            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, -1 * speed);
             spawnDirt();
+            isKeyPressed = true;
         }
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) && transform.position.y < 9.5)
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 9.5)
         {
-            playerBody.linearVelocity = Vector2.up * speed;
+            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, 1 * speed);
             spawnDirt();
+            isKeyPressed = true;
         }
-        else
+        if (!isKeyPressed)
         {
             playerBody.linearVelocity = Vector2.zero;
             spawnDirt();
