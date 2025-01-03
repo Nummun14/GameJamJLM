@@ -7,6 +7,7 @@ public class SoundManger : MonoBehaviour
     public AudioSource Music;
 
     public AudioClip background;
+    public AudioClip background2;
 
 
     void Start()
