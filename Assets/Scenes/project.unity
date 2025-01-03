@@ -439,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &296500598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -457,8 +457,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -289.29993, y: 0}
-  m_SizeDelta: {x: -578.6099, y: -76.6449}
+  m_AnchoredPosition: {x: -300.12527, y: 0}
+  m_SizeDelta: {x: -600.0717, y: -76.6449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &296500599
 MonoBehaviour:
@@ -1209,6 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44655338dd611614bbb6bffe32a1a3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovment: {fileID: 0}
   alertText: {fileID: 2117476777}
   alertInterval: 10
 --- !u!4 &736523952
@@ -2143,8 +2144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.1, y: 165}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -3.2229, y: 0.4596}
+  m_SizeDelta: {x: 185.7542, y: 359.0811}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2117476777
 MonoBehaviour:
@@ -2168,7 +2169,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2179,7 +2180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u05D4\u05D0\u05E8\u05EA\u05D4:"
+  m_Text: 'Alerts:'
 --- !u!222 &2117476778
 CanvasRenderer:
   m_ObjectHideFlags: 0
