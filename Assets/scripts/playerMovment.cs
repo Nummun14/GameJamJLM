@@ -11,6 +11,7 @@ public class playerMovment : MonoBehaviour
     public Sprite[] sprites;
     public int currentSpriteIndex = 0;
     public bool isAlive = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,6 +63,11 @@ public class playerMovment : MonoBehaviour
         }
     }
 
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
     private void animate()
     {
         currentSpriteIndex++;
@@ -75,31 +81,46 @@ public class playerMovment : MonoBehaviour
         bool isKeyPressed = false;
         if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 6.7)
         {
-            playerBody.linearVelocity = new Vector2(1 * speed, playerBody.linearVelocity.y);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.y > 9.5 || transform.position.y < -9.5)
+                playerBody.linearVelocity = Vector2.right * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(1 * speed, playerBody.linearVelocity.y);
+                isKeyPressed = true;
+            }
         }
         if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -7.5)
         {
-            playerBody.linearVelocity = new Vector2(-1 * speed, playerBody.linearVelocity.y);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.y > 9.5 || transform.position.y < -9.5)
+                playerBody.linearVelocity = Vector2.left * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(-1 * speed, playerBody.linearVelocity.y);
+                isKeyPressed = true;
+            }
         }
         if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > -9.5)
         {
-            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, -1 * speed);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.x > 6.7 || transform.position.x < -7.5)
+                playerBody.linearVelocity = Vector2.down * speed;
+            else
+            {
+                playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, -1 * speed);
+                isKeyPressed = true;
+            }
         }
         if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 9.5)
         {
-            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, 1 * speed);
-            spawnDirt();
-            isKeyPressed = true;
+            if (transform.position.x > 6.7 || transform.position.x < -7.5)
+                playerBody.linearVelocity = Vector2.up * speed;
+            else {
+                playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, 1 * speed);
+                isKeyPressed = true;
+            }
         }
         if (!isKeyPressed) {
             playerBody.linearVelocity = Vector2.zero;
-            spawnDirt();
         }
+        spawnDirt();
     }
 }

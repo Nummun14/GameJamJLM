@@ -6,20 +6,22 @@ using UnityEngine.UI;
 
 public class AlertScript : MonoBehaviour
 {
+    public playerMovment playerMovment;
     public Text alertText;
     private List<Alert> alerts = new List<Alert>();
-    public float alertInterval = 10;
+    public float alertInterval = 15;
     private Coroutine alertCoroutine;
     private Alert nextAlertInSequence;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Alert secondAlert = new Alert("Nevermind he's white", doNothing);
-        alerts.Add(new Alert("You are under arrest for stealing that drill. No! Don't run!", () => changeSpeed(8), secondAlert));
-        alerts.Add(new Alert("The neighors are complaining, don't dig in this area", limitArea));
-        alerts.Add(new Alert("Do you have a permit for this?", () => changeSpeed(4)));
-        alerts.Add(new Alert("You look ugly ", () => changeSpeed(2)));
+        playerMovment = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovment>();
+
+        Alert secondAlert = new Alert("Nevermind he's white...", () => changeSpeed(6));
+        alerts.Add(new Alert("You are under arrest for stealing that drill. No! Don't run! Why are you going so fast?", () => changeSpeed(12), secondAlert));
+        alerts.Add(new Alert("HAHAHA! Your drill is broken now! Digging is a lot slower!", () => changeSpeed(5)));
+        alerts.Add(new Alert("You look ugly. Yeah! Be insulted!", () => changeSpeed(2)));
 
         alertCoroutine = StartCoroutine(DisplayRandomAlerts());
     }
@@ -79,20 +81,9 @@ public class AlertScript : MonoBehaviour
             StopCoroutine(alertCoroutine);
     }
 
-    private void limitArea()
-    {
-        Debug.Log("area Limiting");
-        // limiting area code
-    }
-
     private void changeSpeed(float newSpeed)
     {
         Debug.Log($"Speed changed to {newSpeed}!");
-        // implement speed
-    }
-
-    private void doNothing()
-    {
-        Debug.Log("Do nothing");
+        playerMovment.setSpeed(newSpeed);
     }
 }
