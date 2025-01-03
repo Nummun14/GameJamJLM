@@ -5,6 +5,7 @@ public class SoundManger : MonoBehaviour
 
     public AudioSource SFX;
     public AudioSource Music;
+    public AudioSource Sound;
 
     public AudioClip background;
     public AudioClip background2;
@@ -19,7 +20,6 @@ public class SoundManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     public void playSFX(AudioClip clip)
     {
