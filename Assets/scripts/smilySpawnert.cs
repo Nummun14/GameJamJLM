@@ -10,10 +10,9 @@ public class SmileyGenerator : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovment>();
-        InvokeRepeating("SpawnSmiley", 0f, spawnRate);
     }
 
-    void SpawnSmiley()
+    public void SpawnSmiley()
     {
         if (lastSmiley != null)
         {
@@ -22,7 +21,7 @@ public class SmileyGenerator : MonoBehaviour
 
         const float minDistance = 1.0f; // Minimum distance from player
         const float spawnAreaXMin = -5.5f, spawnAreaXMax = 6.0f;
-        const float spawnAreaYMin = -9.5f, spawnAreaYMax = 9.5f;
+        const float spawnAreaYMin = -9.5f, spawnAreaYMax = 9f;
 
         Vector2 playerPosition = player.playerBody.position;
         Vector2 spawnPosition = Vector2.zero;
@@ -47,6 +46,7 @@ public class SmileyGenerator : MonoBehaviour
         if (!validPositionFound)
         {
             Debug.LogWarning("Could not find a valid position to spawn the smiley.");
+            return; // Exit if no valid position was found
         }
 
         // Spawn the smiley at the chosen position

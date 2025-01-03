@@ -119,4 +119,9 @@ private void movment()
         }
         spawnDirt();
     }
+
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;     
+    }
 }
