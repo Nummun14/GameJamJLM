@@ -6,30 +6,33 @@ public class playerMovment : MonoBehaviour
     public SoundManger soundManger;
     public Transform dirt;
     public float speed = 6;
-    public bool canSpawn = true;
     public logicScript logic;
-    private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     public int currentSpriteIndex = 0;
-    public bool isAlive = true;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // area of movement variables
+    [Header("area of movement variables")]
+    public float maxYPos;
+    public float minYPos;
+    public float maxXPos;
+    public float minXPos;
+
+    private bool canSpawn = true;
+    private bool isAlive = true;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
         soundManger = GameObject.FindGameObjectWithTag("audio").GetComponent<SoundManger>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         InvokeRepeating(nameof(animate), 0.15f, 0.15f);
-
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (isAlive)
-            movment();
+            movement();
         else
             playerBody.linearVelocity = Vector2.zero;
-       // soundManger.playSFX(soundManger.background2);
     }
 
     private void spawnDirt() 
@@ -49,8 +52,12 @@ public class playerMovment : MonoBehaviour
             canSpawn = false;
         if (collision.gameObject.layer == 6)
         {
-            Debug.Log(collision.gameObject.name);
-            Debug.Log("lose");
+            soundManger.playSFX(soundManger.crushSound);
+            logic.GameOver();
+            isAlive = false;
+        }
+        if (collision.gameObject.layer == 7)
+        {
             logic.GameOver();
             isAlive = false;
         }
@@ -72,26 +79,33 @@ public class playerMovment : MonoBehaviour
 
         spriteRenderer.sprite = sprites[currentSpriteIndex];
     }
-    private void movment()
+    private void movement()
     {
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 6.7)
+        Vector2 direction = Vector2.zero;
+
+        // Check for key presses and adjust the direction vector accordingly
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < maxXPos) 
         {
-            playerBody.linearVelocity = Vector2.right * speed;
-            spawnDirt();
+            direction += Vector2.right;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -7.5)
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > minXPos) 
         {
-            playerBody.linearVelocity = Vector2.left * speed;   
-            spawnDirt();
+            direction += Vector2.left;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > -9.5)
+        if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > minYPos) 
         {
-            playerBody.linearVelocity = Vector2.down * speed;
-            spawnDirt();
+            direction += Vector2.down;
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 9.5)
+        if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < maxYPos)
         {
-            playerBody.linearVelocity = Vector2.up * speed;
+            direction += Vector2.up;
+        }
+
+        // Normalize the direction to ensure consistent speed in diagonal movement
+        if (direction != Vector2.zero)
+        {
+            direction.Normalize();
+            playerBody.linearVelocity = direction * speed;
             spawnDirt();
         }
         else
@@ -100,7 +114,6 @@ public class playerMovment : MonoBehaviour
             spawnDirt();
         }
     }
-
     public void setSpeed(float speed)
     {
         this.speed = speed;     

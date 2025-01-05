@@ -6,10 +6,12 @@ public class SoundManger : MonoBehaviour
     public AudioSource SFX;
     public AudioSource Music;
     public AudioSource Sound;
-
+    [Header("Music:")]
     public AudioClip background;
     public AudioClip background2;
-
+    [Header("SFX:")]
+    public AudioClip deathSound;
+    public AudioClip crushSound;
 
     void Start()
     {

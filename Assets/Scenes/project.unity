@@ -165,8 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pzza: {fileID: 7690701738233734169, guid: 2759fef505e00a88c9e014377f8a9be5, type: 3}
   SpawnRate: 2
-  leftest: -4
-  rightest: 4
+  minXPos: -5.5
+  maxXpos: 6.7
   spawnHeight: 13
 --- !u!1 &157770483
 GameObject:
@@ -278,6 +278,8 @@ MonoBehaviour:
   Sound: {fileID: 2074220847}
   background: {fileID: 8300000, guid: 6329ec00dd93f7c4f9064a826966db96, type: 3}
   background2: {fileID: 8300000, guid: f3e582380aca43547b64fb0b08edef0c, type: 3}
+  deathSound: {fileID: 8300000, guid: 58fc704ce8dbe5d49a391b134278b6a7, type: 3}
+  crushSound: {fileID: 8300000, guid: 0470a1e62ae24854b851553af3091d2f, type: 3}
 --- !u!4 &252639973
 Transform:
   m_ObjectHideFlags: 0
@@ -745,8 +747,8 @@ GameObject:
   - component: {fileID: 546123597}
   - component: {fileID: 546123596}
   - component: {fileID: 546123595}
-  - component: {fileID: 546123598}
   - component: {fileID: 546123599}
+  - component: {fileID: 546123598}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -845,7 +847,7 @@ Transform:
   m_GameObject: {fileID: 546123592}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -5.82, z: -0.13183299}
+  m_LocalPosition: {x: -0.1, y: -5.97, z: -0.13183299}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -864,9 +866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 546123595}
+  soundManger: {fileID: 0}
   dirt: {fileID: 8064720540177359702, guid: 4a821943fee3d6c42ae37acfae0972f8, type: 3}
   speed: 6
-  canSpawn: 1
   logic: {fileID: 1758606565}
   sprites:
   - {fileID: 1634257073513659926, guid: 70f7ce564bf332947bff42c6298edcbb, type: 3}
@@ -874,7 +876,10 @@ MonoBehaviour:
   - {fileID: 5571474205568410654, guid: 2c77d85a9eaa5f64f973a0242b8f4c59, type: 3}
   - {fileID: -2388994482622123551, guid: b5317789e12c4614dbefe6bff36b51c7, type: 3}
   currentSpriteIndex: 0
-  isAlive: 1
+  maxYPos: 9.5
+  minYPos: -9.5
+  maxXPos: 7.5
+  minXPos: -7.5
 --- !u!61 &546123599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1629,6 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e47547318a8fc568bc238efb9088603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManger: {fileID: 0}
   scoreText: {fileID: 1844401011}
   GameOverScreen: {fileID: 1355491032}
 --- !u!1 &1775552853
