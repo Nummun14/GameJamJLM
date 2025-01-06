@@ -1085,7 +1085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smileyPrefab: {fileID: 1414512914352011698, guid: 19f2d4c4fad582f409d1d4e11e93a264, type: 3}
-  spawnRate: 0
 --- !u!4 &635644249
 Transform:
   m_ObjectHideFlags: 0
