@@ -8,7 +8,8 @@ public class SmileyGenerator : MonoBehaviour
 
     void Start()
     {
-         player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovment>();    }
+         player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovment>();    
+    }
 
     public void SpawnSmiley()
     {

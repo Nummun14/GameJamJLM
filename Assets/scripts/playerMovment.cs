@@ -84,21 +84,21 @@ public class playerMovment : MonoBehaviour
         Vector2 direction = Vector2.zero;
 
         // Check for key presses and adjust the direction vector accordingly
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < maxXPos) 
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.x < maxXPos) 
         {
             direction += Vector2.right;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > minXPos) 
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.x > minXPos) 
         {
             direction += Vector2.left;
         }
-        if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > minYPos) 
-        {
-            direction += Vector2.down;
-        }
-        if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < maxYPos)
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < maxYPos) 
         {
             direction += Vector2.up;
+        }
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y > minYPos)
+        {
+            direction += Vector2.down;
         }
 
         // Normalize the direction to ensure consistent speed in diagonal movement
