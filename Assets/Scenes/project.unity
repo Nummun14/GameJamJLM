@@ -275,9 +275,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFX: {fileID: 620066286}
   Music: {fileID: 283168571}
-  Sound: {fileID: 2074220847}
+  DrilMusic: {fileID: 2074220847}
   background: {fileID: 8300000, guid: 6329ec00dd93f7c4f9064a826966db96, type: 3}
-  background2: {fileID: 8300000, guid: f3e582380aca43547b64fb0b08edef0c, type: 3}
+  drilLoop: {fileID: 8300000, guid: f3e582380aca43547b64fb0b08edef0c, type: 3}
   deathSound: {fileID: 8300000, guid: 58fc704ce8dbe5d49a391b134278b6a7, type: 3}
   crushSound: {fileID: 8300000, guid: 0470a1e62ae24854b851553af3091d2f, type: 3}
 --- !u!4 &252639973
@@ -330,7 +330,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -956,7 +956,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.555
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1997,7 +1997,7 @@ GameObject:
   - component: {fileID: 2074220848}
   - component: {fileID: 2074220847}
   m_Layer: 0
-  m_Name: Music (1)
+  m_Name: DrilMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2016,9 +2016,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

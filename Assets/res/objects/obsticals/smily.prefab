@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1414512914352011698}
   - component: {fileID: 7364768090771313916}
   - component: {fileID: -544228413399383367}
-  - component: {fileID: -1150161291899451454}
+  - component: {fileID: 94087689927367215}
   m_Layer: 7
   m_Name: smily
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5129022569712067238}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4048, z: 0}
-  m_LocalScale: {x: 4, y: 6, z: 1}
+  m_LocalPosition: {x: -5.7148, y: -11.0247, z: 0}
+  m_LocalScale: {x: 1.6285568, y: 1.535348, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -808489377
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 01552ca3797f23a4cb8cd06763b0c073, type: 3}
+  m_Sprite: {fileID: 6598842402039494180, guid: 1758ecebd894f184cbf92fb362f2ac22, type: 3}
   m_Color: {r: 0.7169812, g: 0.15895337, b: 0.15895337, a: 0.6666667}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e470878aa4e6ea4fac109edfbfb516f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &-1150161291899451454
-BoxCollider2D:
+--- !u!58 &94087689927367215
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,14 +136,4 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 4.82, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 2.56
