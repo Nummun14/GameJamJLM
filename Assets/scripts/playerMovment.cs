@@ -11,10 +11,10 @@ public class playerMovment : MonoBehaviour
     public int currentSpriteIndex = 0;
     // area of movement variables
     [Header("area of movement variables")]
-    public float maxYPos;
-    public float minYPos;
-    public float maxXPos;
-    public float minXPos;
+    public float maxYPos = 9.5f;
+    public float minYPos = -9.5f;
+    public float maxXPos = 7.5f;
+    public float minXPos = -7.5f;
 
     private bool canSpawn = true;
     private bool isAlive = true;
@@ -102,17 +102,9 @@ public class playerMovment : MonoBehaviour
         }
 
         // Normalize the direction to ensure consistent speed in diagonal movement
-        if (direction != Vector2.zero)
-        {
-            direction.Normalize();
-            playerBody.linearVelocity = direction * speed;
-            spawnDirt();
-        }
-        else
-        {
-            playerBody.linearVelocity = Vector2.zero;
-            spawnDirt();
-        }
+        direction.Normalize();
+        playerBody.linearVelocity = direction * speed;
+        spawnDirt();
     }
     public void setSpeed(float speed)
     {
