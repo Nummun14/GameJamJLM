@@ -3,19 +3,15 @@ using UnityEngine;
 public class pzzaSpawner : MonoBehaviour
 {
     public GameObject pzza;
-    public float SpawnRate= 2;
-    private float timer = 0;
-    public float leftest = -5.5f;
-    public float rightest = 6.7f;
+    public float SpawnRate = 2;
+    public float minXPos = -5.5f;
+    public float maxXpos = 6.7f;
     public float spawnHeight = 13 ;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private float timer = 0;
 
-    // Update is called once per frame
+    void Start(){}
+
     void Update()
     {
         if (timer < SpawnRate)
@@ -25,7 +21,7 @@ public class pzzaSpawner : MonoBehaviour
         else
         {
             // Calculate the random X position within bounds
-            float randomX = Random.Range(leftest, rightest);
+            float randomX = Random.Range(minXPos, maxXpos);
 
             // Set the spawn position above the visible area
             Vector2 spawnPosition = new Vector2(randomX, spawnHeight);

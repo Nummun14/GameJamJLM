@@ -4,21 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class logicScript : MonoBehaviour
 {
-
+    public SoundManger soundManger;
     public Text scoreText;
     private int score = 0;
-
     public GameObject GameOverScreen;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    
+    void Start() {
+        soundManger = GameObject.FindGameObjectWithTag("audio").GetComponent<SoundManger>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update() {}
 
     public void restartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -26,6 +20,7 @@ public class logicScript : MonoBehaviour
 
     public void GameOver(){
         GameOverScreen.SetActive(true);
+        soundManger.playSFX(soundManger.deathSound);
     }
 
     public void AddScore(int amount)

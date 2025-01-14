@@ -6,30 +6,33 @@ public class playerMovment : MonoBehaviour
     public SoundManger soundManger;
     public Transform dirt;
     public float speed = 6;
-    public bool canSpawn = true;
     public logicScript logic;
-    private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     public int currentSpriteIndex = 0;
-    public bool isAlive = true;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // area of movement variables
+    [Header("area of movement variables")]
+    public float maxYPos = 9.5f;
+    public float minYPos = -9.5f;
+    public float maxXPos = 7.5f;
+    public float minXPos = -7.5f;
+
+    private bool canSpawn = true;
+    private bool isAlive = true;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
         soundManger = GameObject.FindGameObjectWithTag("audio").GetComponent<SoundManger>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         InvokeRepeating(nameof(animate), 0.15f, 0.15f);
-
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (isAlive)
-            movment();
+            movement();
         else
             playerBody.linearVelocity = Vector2.zero;
-       // soundManger.playSFX(soundManger.background2);
     }
 
     private void spawnDirt() 
@@ -49,8 +52,12 @@ public class playerMovment : MonoBehaviour
             canSpawn = false;
         if (collision.gameObject.layer == 6)
         {
-            Debug.Log(collision.gameObject.name);
-            Debug.Log("lose");
+            soundManger.playSFX(soundManger.crushSound);
+            logic.GameOver();
+            isAlive = false;
+        }
+        if (collision.gameObject.layer == 7)
+        {
             logic.GameOver();
             isAlive = false;
         }
@@ -72,35 +79,33 @@ public class playerMovment : MonoBehaviour
 
         spriteRenderer.sprite = sprites[currentSpriteIndex];
     }
-    private void movment()
+    private void movement()
     {
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 6.7)
-        {
-            playerBody.linearVelocity = Vector2.right * speed;
-            spawnDirt();
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -7.5)
-        {
-            playerBody.linearVelocity = Vector2.left * speed;   
-            spawnDirt();
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > -9.5)
-        {
-            playerBody.linearVelocity = Vector2.down * speed;
-            spawnDirt();
-        }
-        else if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 9.5)
-        {
-            playerBody.linearVelocity = Vector2.up * speed;
-            spawnDirt();
-        }
-        else
-        {
-            playerBody.linearVelocity = Vector2.zero;
-            spawnDirt();
-        }
-    }
+        Vector2 direction = Vector2.zero;
 
+        // Check for key presses and adjust the direction vector accordingly
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.x < maxXPos) 
+        {
+            direction += Vector2.right;
+        }
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.x > minXPos) 
+        {
+            direction += Vector2.left;
+        }
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < maxYPos) 
+        {
+            direction += Vector2.up;
+        }
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y > minYPos)
+        {
+            direction += Vector2.down;
+        }
+
+        // Normalize the direction to ensure consistent speed in diagonal movement
+        direction.Normalize();
+        playerBody.linearVelocity = direction * speed;
+        spawnDirt();
+    }
     public void setSpeed(float speed)
     {
         this.speed = speed;     

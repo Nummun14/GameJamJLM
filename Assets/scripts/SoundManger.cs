@@ -5,16 +5,20 @@ public class SoundManger : MonoBehaviour
 
     public AudioSource SFX;
     public AudioSource Music;
-    public AudioSource Sound;
-
+    public AudioSource DrilMusic;
+    [Header("Music:")]
     public AudioClip background;
-    public AudioClip background2;
-
+    public AudioClip drilLoop;
+    [Header("SFX:")]
+    public AudioClip deathSound;
+    public AudioClip crushSound;
 
     void Start()
     {
         Music.clip = background;
         Music.Play();
+        DrilMusic.clip = drilLoop;
+        DrilMusic.Play();
     }
 
     // Update is called once per frame
